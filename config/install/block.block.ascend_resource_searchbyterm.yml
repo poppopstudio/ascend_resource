@@ -1,0 +1,33 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.resource_search
+  module:
+    - configurable_views_filter_block
+    - system
+  theme:
+    - localgov_base
+id: ascend_resource_searchbyterm
+theme: localgov_base
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'configurable_views_filter_block_block:resource_search-page_1'
+settings:
+  id: 'configurable_views_filter_block_block:resource_search-page_1'
+  label: ''
+  label_display: '0'
+  provider: configurable_views_filter_block
+  views_label: ''
+  visible_filters:
+    category_target_id: category_target_id
+  no_groups: false
+  no_reset: false
+  no_sort: false
+  no_pager: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /resource

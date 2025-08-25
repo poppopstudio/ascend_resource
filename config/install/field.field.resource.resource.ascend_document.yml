@@ -1,0 +1,29 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.resource.ascend_document
+    - media.type.document
+  module:
+    - ascend_resource
+id: resource.resource.ascend_document
+field_name: ascend_document
+entity_type: resource
+bundle: resource
+label: Document(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

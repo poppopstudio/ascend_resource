@@ -1,0 +1,51 @@
+uuid: 47c6e046-6be0-4080-811e-4b688b151083
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_document
+    - media.type.document
+  module:
+    - file
+    - filefield_paths
+  enforced:
+    module:
+      - media
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: 'resource/[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: true
+        pathauto: true
+        transliterate: true
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: true
+        pathauto: true
+        transliterate: true
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+_core:
+  default_config_hash: DY5HtJTxUjFRGU_PaY6ifo2nhR-nAZ0y0s6kLmUbv5g
+id: media.document.field_media_document
+field_name: field_media_document
+entity_type: media
+bundle: document
+label: Document
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf odp ods odt'
+  max_filesize: 50MB
+  description_field: false
+field_type: file

@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 6b0d1127-2318-49c1-98cb-2ff24ae54e85
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c73a5d31-154f-42d3-8700-56fb947f9388: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Speech Sound Difficulties'
+  description:
+    -
+      value: 'I have trouble producing speech sounds correctly.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c73a5d31-154f-42d3-8700-56fb947f9388
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

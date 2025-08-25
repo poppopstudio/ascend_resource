@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 709312af-720e-48c0-9cab-aa76bb87e985
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    f970056b-cb16-4157-a6fc-af9d996d4a6d: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Lack of Confidence'
+  description:
+    -
+      value: 'I doubt my abilities or fear failure.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: f970056b-cb16-4157-a6fc-af9d996d4a6d
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

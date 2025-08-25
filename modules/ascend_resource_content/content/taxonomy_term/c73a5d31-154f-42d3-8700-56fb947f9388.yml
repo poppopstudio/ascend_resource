@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: c73a5d31-154f-42d3-8700-56fb947f9388
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c135daaf-6333-432a-89f4-8bde9b718b61: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Speech, Language, and Communication Needs (SLCN)'
+  description:
+    -
+      value: 'Support speech, language, and communication development.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c135daaf-6333-432a-89f4-8bde9b718b61
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

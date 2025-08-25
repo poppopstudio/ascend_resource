@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: cc7e2f92-a842-4050-b096-a21a0e79300a
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    43d43e11-6c77-4bb2-a352-80003e7cf1b0: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Teachers make use of formative'
+  description:
+    -
+      value: 'Use assessments to guide and monitor educational progress.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 43d43e11-6c77-4bb2-a352-80003e7cf1b0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

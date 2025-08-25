@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: acad72d9-7a97-44c3-843e-2b377960ee30
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    79cb7e3a-6c98-4137-b451-3aca8a582ecd: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'High Quality Teaching and Adaptations'
+  description:
+    -
+      value: 'Ensure high-quality teaching and necessary adaptations for all learners.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 79cb7e3a-6c98-4137-b451-3aca8a582ecd
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

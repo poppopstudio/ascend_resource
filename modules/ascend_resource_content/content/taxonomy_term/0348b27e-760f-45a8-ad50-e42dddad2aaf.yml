@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 0348b27e-760f-45a8-ad50-e42dddad2aaf
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    72ffedba-0a23-4625-a629-3130ef223ccc: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Difficulty with Visual Tracking'
+  description:
+    -
+      value: 'I have trouble following objects or text with my eyes.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 72ffedba-0a23-4625-a629-3130ef223ccc
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

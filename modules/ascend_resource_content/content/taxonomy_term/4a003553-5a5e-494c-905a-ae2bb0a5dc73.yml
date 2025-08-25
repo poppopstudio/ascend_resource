@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 4a003553-5a5e-494c-905a-ae2bb0a5dc73
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    bab6a6a8-227a-48ef-b027-4adbd5ed8e28: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Proprioceptive Seeking'
+  description:
+    -
+      value: 'I seek out activities that provide deep pressure or heavy work.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: bab6a6a8-227a-48ef-b027-4adbd5ed8e28
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

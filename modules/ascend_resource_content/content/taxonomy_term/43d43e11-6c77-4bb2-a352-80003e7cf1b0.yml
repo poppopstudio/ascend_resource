@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 43d43e11-6c77-4bb2-a352-80003e7cf1b0
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    79cb7e3a-6c98-4137-b451-3aca8a582ecd: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Assessment and Early Identification'
+  description:
+    -
+      value: 'Identify learning needs and barriers early through assessments.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 79cb7e3a-6c98-4137-b451-3aca8a582ecd
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

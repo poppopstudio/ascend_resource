@@ -1,0 +1,23 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.resource.ascend_res_usage
+    - filter.format.basic_html
+  module:
+    - ascend_resource
+    - text
+id: resource.resource.ascend_res_usage
+field_name: ascend_res_usage
+entity_type: resource
+bundle: resource
+label: Usage
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

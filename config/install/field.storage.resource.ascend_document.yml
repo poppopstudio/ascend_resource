@@ -1,0 +1,19 @@
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - ascend_resource
+    - media
+id: resource.ascend_document
+field_name: ascend_document
+entity_type: resource
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 5
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

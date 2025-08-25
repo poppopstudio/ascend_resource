@@ -1,0 +1,6 @@
+entity.resource.add:
+  title: Add Resource
+  route_name: entity.resource.add_form
+  weight: 15
+  appears_on:
+    - entity.resource.collection

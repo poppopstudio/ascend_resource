@@ -1,0 +1,23 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.ascend_info
+    - filter.format.basic_html
+    - taxonomy.vocabulary.category
+  module:
+    - text
+id: taxonomy_term.category.ascend_info
+field_name: ascend_info
+entity_type: taxonomy_term
+bundle: category
+label: Information
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

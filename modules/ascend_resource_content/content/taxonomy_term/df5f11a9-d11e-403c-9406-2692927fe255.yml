@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: df5f11a9-d11e-403c-9406-2692927fe255
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    acad72d9-7a97-44c3-843e-2b377960ee30: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Sustaining subject interest'
+  description:
+    -
+      value: 'Maintain and encourage interest in various subjects.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: acad72d9-7a97-44c3-843e-2b377960ee30
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

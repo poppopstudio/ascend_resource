@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 8c5bbf65-7597-447d-9156-a9285d6da835
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    20c494f0-e06f-4edd-a4e6-9025048fd881: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Working Memory'
+  description:
+    -
+      value: 'I have difficulty following multi-step instructions or holding the objective of a task in mind.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 20c494f0-e06f-4edd-a4e6-9025048fd881
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

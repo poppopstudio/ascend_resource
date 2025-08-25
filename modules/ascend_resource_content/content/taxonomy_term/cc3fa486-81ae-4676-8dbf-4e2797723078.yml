@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: cc3fa486-81ae-4676-8dbf-4e2797723078
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    20c494f0-e06f-4edd-a4e6-9025048fd881: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Organisation of Materials'
+  description:
+    -
+      value: 'I lose my belongings and struggle to organize and find my resources.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 20c494f0-e06f-4edd-a4e6-9025048fd881
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

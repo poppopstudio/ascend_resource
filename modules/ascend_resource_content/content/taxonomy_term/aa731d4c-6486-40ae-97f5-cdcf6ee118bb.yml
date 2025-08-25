@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: aa731d4c-6486-40ae-97f5-cdcf6ee118bb
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    04b5985d-c6f1-45ba-a5cb-742828bf8d34: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Sensitivity to Touch'
+  description:
+    -
+      value: 'I am sensitive to certain textures or types of touch.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 04b5985d-c6f1-45ba-a5cb-742828bf8d34
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 5c15139c-b331-473d-a288-94a307f7f7f9
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c73a5d31-154f-42d3-8700-56fb947f9388: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Receptive Language Difficulties'
+  description:
+    -
+      value: 'I struggle to understand what others say to me.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c73a5d31-154f-42d3-8700-56fb947f9388
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

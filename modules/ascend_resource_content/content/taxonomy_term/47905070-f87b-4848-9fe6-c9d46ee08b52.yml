@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 47905070-f87b-4848-9fe6-c9d46ee08b52
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    bbb94d43-87e8-433d-b0e8-67d5e88e28de: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Reading
+  description:
+    -
+      value: 'Enhance reading skills and comprehension abilities.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: bbb94d43-87e8-433d-b0e8-67d5e88e28de
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

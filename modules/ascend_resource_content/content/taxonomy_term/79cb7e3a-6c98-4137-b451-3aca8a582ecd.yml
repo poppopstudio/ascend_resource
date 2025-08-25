@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 79cb7e3a-6c98-4137-b451-3aca8a582ecd
+  bundle: category
+  default_langcode: en-gb
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Whole School Universal'
+  description:
+    -
+      value: 'Implement strategies and practices that benefit the entire school community.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

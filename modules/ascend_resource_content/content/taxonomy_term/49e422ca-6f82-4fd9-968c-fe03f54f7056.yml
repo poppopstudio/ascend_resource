@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 49e422ca-6f82-4fd9-968c-fe03f54f7056
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    41ac750b-a020-4701-82a6-930048f59363: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Difficulty with Social Cues'
+  description:
+    -
+      value: 'I have trouble understanding social cues or norms.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 41ac750b-a020-4701-82a6-930048f59363
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

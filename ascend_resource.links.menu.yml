@@ -1,0 +1,5 @@
+entity.resource.field_ui:
+  title: Resource settings
+  description: Create and manage fields, forms, and display settings for resources.
+  route_name: entity.resource.field_ui_base
+  parent: system.admin_structure

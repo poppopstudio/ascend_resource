@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 86a31ac0-6ac9-451c-9400-4345690b2093
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c3128103-0ca4-45e1-b336-430b6b5b5daa: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Hearing Impairments'
+  description:
+    -
+      value: 'Support students with hearing impairments and accessibility needs.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c3128103-0ca4-45e1-b336-430b6b5b5daa
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

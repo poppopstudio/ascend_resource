@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 65d05fb4-d500-4f4d-bf5d-1fd7d9f065c8
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    935e2fe4-11d0-4ab6-a622-2510d86b4a6f: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Prepare for adulthood'
+  description:
+    -
+      value: 'Equip students with skills and knowledge for adult life.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 935e2fe4-11d0-4ab6-a622-2510d86b4a6f
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 43d5e158-06f6-4dbf-b736-995bf6980e61
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c3128103-0ca4-45e1-b336-430b6b5b5daa: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Olfactory Sensitivities'
+  description:
+    -
+      value: 'Address sensitivities related to smells and olfactory experiences.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c3128103-0ca4-45e1-b336-430b6b5b5daa
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

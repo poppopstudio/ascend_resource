@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: de3bce33-2720-46c0-9f0a-35c2e0bafd8c
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    6fdf5bff-35d8-4689-a60d-e0dccbcf2bce: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Sensitivity to Tastes'
+  description:
+    -
+      value: 'I am sensitive to certain tastes or textures of food.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 6fdf5bff-35d8-4689-a60d-e0dccbcf2bce
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

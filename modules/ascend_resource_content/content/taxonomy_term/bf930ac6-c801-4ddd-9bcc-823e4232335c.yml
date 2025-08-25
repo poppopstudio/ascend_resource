@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: bf930ac6-c801-4ddd-9bcc-823e4232335c
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    bab6a6a8-227a-48ef-b027-4adbd5ed8e28: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Vestibular Seeking'
+  description:
+    -
+      value: 'I seek out activities that involve movement, such as spinning or swinging.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: bab6a6a8-227a-48ef-b027-4adbd5ed8e28
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

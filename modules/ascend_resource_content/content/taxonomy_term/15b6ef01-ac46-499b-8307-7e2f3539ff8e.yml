@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 15b6ef01-ac46-499b-8307-7e2f3539ff8e
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    bbb94d43-87e8-433d-b0e8-67d5e88e28de: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Maths
+  description:
+    -
+      value: 'Strengthen mathematical understanding and problem-solving skills.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: bbb94d43-87e8-433d-b0e8-67d5e88e28de
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

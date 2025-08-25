@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 1d59795a-db18-4758-bc16-4606e1da51f4
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    e6bf9bca-e4a2-4646-981a-d2cdb2e2ce85: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Safe respectful environment'
+  description:
+    -
+      value: 'Promote safety and respect within the school environment.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: e6bf9bca-e4a2-4646-981a-d2cdb2e2ce85
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

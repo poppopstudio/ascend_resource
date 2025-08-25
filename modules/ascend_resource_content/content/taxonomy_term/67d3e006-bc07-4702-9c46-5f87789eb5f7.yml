@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 67d3e006-bc07-4702-9c46-5f87789eb5f7
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    088539aa-924c-4c2a-b530-ccd4dbc8a6ac: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Inclusive participation'
+  description:
+    -
+      value: 'Ensure all students can participate fully in school activities.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 088539aa-924c-4c2a-b530-ccd4dbc8a6ac
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

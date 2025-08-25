@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: a106c2f0-ac60-4295-9212-b10149ff6e50
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c73a5d31-154f-42d3-8700-56fb947f9388: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Expressive Language Difficulties'
+  description:
+    -
+      value: 'I have trouble expressing my thoughts, ideas, and feelings verbally.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c73a5d31-154f-42d3-8700-56fb947f9388
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

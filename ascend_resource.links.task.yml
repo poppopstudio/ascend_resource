@@ -1,0 +1,26 @@
+entity.resource.collection:
+  title: 'Resources'
+  route_name: entity.resource.collection
+  base_route: system.admin_content
+  weight: 15
+entity.resource.canonical:
+  title: 'View'
+  route_name: entity.resource.canonical
+  base_route: entity.resource.canonical
+entity.resource.edit_form:
+  title: 'Edit'
+  route_name: entity.resource.edit_form
+  base_route: entity.resource.canonical
+entity.resource.delete_form:
+  title: 'Delete'
+  route_name: entity.resource.delete_form
+  base_route: entity.resource.canonical
+entity.resource.field_ui_base:
+  title: 'Resource settings'
+  route_name: entity.resource.field_ui_base
+  base_route: entity.resource.field_ui_base
+entity.node.version_history:
+  title: 'Revisions'
+  route_name: entity.resource.version_history
+  base_route: entity.resource.canonical
+  weight: 20

@@ -1,0 +1,48 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.taxonomy_term.edit_info
+    - field.field.taxonomy_term.category.ascend_info
+    - taxonomy.vocabulary.category
+  module:
+    - readonly_field_widget
+    - text
+id: taxonomy_term.category.edit_info
+targetEntityType: taxonomy_term
+bundle: category
+mode: edit_info
+content:
+  ascend_info:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  description:
+    type: readonly_field_widget
+    weight: 1
+    region: content
+    settings:
+      label: inline
+      formatter_type: text_default
+      formatter_settings: {  }
+      show_description: false
+    third_party_settings: {  }
+  name:
+    type: readonly_field_widget
+    weight: 0
+    region: content
+    settings:
+      label: inline
+      formatter_type: string
+      formatter_settings:
+        string:
+          link_to_entity: false
+      show_description: false
+    third_party_settings: {  }
+hidden:
+  path: true
+  status: true

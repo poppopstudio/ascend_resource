@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 50d11371-5d84-44e8-8349-1227b9b217b0
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    4e5f0c02-daa1-4958-a493-6189ebf1f551: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Oppositional Defiant Disorder (ODD)'
+  description:
+    -
+      value: 'I have a pattern of angry/irritable mood, argumentative/defiant behavior, or vindictiveness.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 4e5f0c02-daa1-4958-a493-6189ebf1f551
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

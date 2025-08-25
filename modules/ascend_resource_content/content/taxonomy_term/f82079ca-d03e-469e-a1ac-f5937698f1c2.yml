@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: f82079ca-d03e-469e-a1ac-f5937698f1c2
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    72ffedba-0a23-4625-a629-3130ef223ccc: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Visual Processing Difficulties'
+  description:
+    -
+      value: 'I struggle to interpret or make sense of visual information.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 72ffedba-0a23-4625-a629-3130ef223ccc
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

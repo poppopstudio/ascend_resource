@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: c5292d66-fafe-4a6a-a98c-f120d997d571
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    86a31ac0-6ac9-451c-9400-4345690b2093: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Sensitivity to Noise'
+  description:
+    -
+      value: 'I am sensitive to certain sounds or noise levels.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 86a31ac0-6ac9-451c-9400-4345690b2093
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

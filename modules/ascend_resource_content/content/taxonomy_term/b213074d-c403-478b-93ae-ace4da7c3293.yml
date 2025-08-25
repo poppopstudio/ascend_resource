@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: b213074d-c403-478b-93ae-ace4da7c3293
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    935e2fe4-11d0-4ab6-a622-2510d86b4a6f: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Plan transitions'
+  description:
+    -
+      value: 'Facilitate smooth transitions between educational stages.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 935e2fe4-11d0-4ab6-a622-2510d86b4a6f
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

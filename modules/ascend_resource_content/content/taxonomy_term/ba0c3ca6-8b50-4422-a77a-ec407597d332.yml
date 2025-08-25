@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: ba0c3ca6-8b50-4422-a77a-ec407597d332
+  bundle: pricing
+  default_langcode: en-gb
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Free
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

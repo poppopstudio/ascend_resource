@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: fa8c0a03-8865-4296-aee5-b1d858f7153b
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    47905070-f87b-4848-9fe6-c9d46ee08b52: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Memory
+  description:
+    -
+      value: 'I may have difficulties copying texts, lose my place in longer pieces, or quickly forget what I have read.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 47905070-f87b-4848-9fe6-c9d46ee08b52
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

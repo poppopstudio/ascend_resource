@@ -1,0 +1,30 @@
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - simple_taxonomy_menu
+    - taxonomy
+  theme:
+    - localgov_base
+id: ascend_categories_block
+theme: localgov_base
+region: sidebar_first
+weight: -7
+provider: null
+plugin: simple_taxonomy_menu_block
+settings:
+  id: simple_taxonomy_menu_block
+  label: Categories
+  label_display: visible
+  provider: simple_taxonomy_menu
+  simple_taxonomy_menu_vid: category
+  simple_taxonomy_menu_before: ''
+  simple_taxonomy_menu_after: ''
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      category: category

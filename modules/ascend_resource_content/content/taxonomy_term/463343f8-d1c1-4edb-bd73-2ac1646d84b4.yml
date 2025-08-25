@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 463343f8-d1c1-4edb-bd73-2ac1646d84b4
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    79cb7e3a-6c98-4137-b451-3aca8a582ecd: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Environment
+  description:
+    -
+      value: 'Foster a supportive and inclusive physical and emotional environment.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 79cb7e3a-6c98-4137-b451-3aca8a582ecd
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

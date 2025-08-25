@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 059b74c0-45a7-4363-825e-e981f6d62301
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    20c494f0-e06f-4edd-a4e6-9025048fd881: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Flexibility of Thinking / Shift'
+  description:
+    -
+      value: 'I have difficulty adapting to change or revising plans when faced with new information or setbacks.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 20c494f0-e06f-4edd-a4e6-9025048fd881
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

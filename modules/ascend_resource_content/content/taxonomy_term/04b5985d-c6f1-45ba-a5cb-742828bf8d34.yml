@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 04b5985d-c6f1-45ba-a5cb-742828bf8d34
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    c3128103-0ca4-45e1-b336-430b6b5b5daa: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Tactile Sensitivities'
+  description:
+    -
+      value: 'Manage sensitivities related to touch and physical interaction.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: c3128103-0ca4-45e1-b336-430b6b5b5daa
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

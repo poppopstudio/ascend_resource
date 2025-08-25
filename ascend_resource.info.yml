@@ -1,0 +1,59 @@
+name: Ascend resource
+type: module
+package: Ascend
+description: 'Ascend resource'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - configurable_views_filter_block:configurable_views_filter_block
+  - cshs:cshs
+  - entity:entity
+  - entity_admin_handlers:entity_admin_handlers
+  - epp:epp
+  - field_group:field_group
+  - field_group_table:field_group_table
+  - filefield_paths:filefield_paths
+  - inline_entity_form:inline_entity_form
+  - media:media
+  - readonly_field_widget:readonly_field_widget
+  - role_delegation:role_delegation
+  - simple_taxonomy_menu:simple_taxonomy_menu
+  - taxonomy:taxonomy
+  - views:views
+  - views_add_button:views_add_button
+
+config_devel:
+  - block.block.ascend_categories_block
+  - block.block.ascend_resource_searchbyterm
+  - block.block.ascend_resource_searchbytitle
+  - core.base_field_override.resource.resource.category
+  - core.base_field_override.taxonomy_term.category.description
+  - core.entity_form_display.resource.resource.default
+  - core.entity_form_display.taxonomy_term.category.default
+  - core.entity_form_display.taxonomy_term.category.edit_info
+  - core.entity_form_mode.taxonomy_term.edit_info
+  - core.entity_view_display.resource.resource.default
+  - core.entity_view_display.taxonomy_term.category.default
+  - field.field.resource.resource.ascend_document
+  - field.field.resource.resource.ascend_res_desc
+  - field.field.resource.resource.ascend_res_link
+  - field.field.resource.resource.ascend_res_pricing
+  - field.field.resource.resource.ascend_res_stage
+  - field.field.resource.resource.ascend_res_usage
+  - field.field.taxonomy_term.category.ascend_info
+  - field.storage.resource.ascend_document
+  - field.storage.resource.ascend_res_desc
+  - field.storage.resource.ascend_res_link
+  - field.storage.resource.ascend_res_pricing
+  - field.storage.resource.ascend_res_stage
+  - field.storage.resource.ascend_res_usage
+  - field.storage.taxonomy_term.ascend_info
+  - form_mode_manager.links
+  - form_mode_manager.settings
+  - taxonomy.vocabulary.pricing
+  - taxonomy.vocabulary.stage
+  - views.view.category_child_terms
+  - views.view.category_parent_terms
+  - views.view.category_resources
+  - views.view.resource_needed
+  - views.view.resource_search
+  - user.role.resource_manager

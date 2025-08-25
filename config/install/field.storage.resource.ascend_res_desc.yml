@@ -1,0 +1,20 @@
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - ascend_resource
+id: resource.ascend_res_desc
+field_name: ascend_res_desc
+entity_type: resource
+type: string
+settings:
+  max_length: 100
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

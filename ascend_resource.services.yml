@@ -1,0 +1,4 @@
+services:
+  Drupal\ascend_resource\Hook\ResourceHooks:
+    class: Drupal\ascend_resource\Hook\ResourceHooks
+    autowire: true

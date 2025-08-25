@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 2789a48a-5a00-4b71-8f81-b24a7202776f
+  bundle: category
+  default_langcode: en-gb
+  depends:
+    20c494f0-e06f-4edd-a4e6-9025048fd881: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Planning and Prioritisation'
+  description:
+    -
+      value: 'I work chaotically through tasks and struggle to prioritize them.'
+      format: plain_text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 20c494f0-e06f-4edd-a4e6-9025048fd881
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en-gb
+      pathauto: 1

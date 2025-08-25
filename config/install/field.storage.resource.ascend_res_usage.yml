@@ -1,0 +1,18 @@
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - ascend_resource
+    - text
+id: resource.ascend_res_usage
+field_name: ascend_res_usage
+entity_type: resource
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
