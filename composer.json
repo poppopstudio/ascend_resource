@@ -5,7 +5,7 @@
     "authors": [
         {
             "name": "NikLP",
-            "homepage": "https://github.com/poppopstudio/resource_base",
+            "homepage": "https://github.com/poppopstudio/ascend_resource",
             "role": "Maintainer"
         }
     ],
@@ -28,7 +28,6 @@
         "drupal/redirect": "^1.11",
         "drupal/role_delegation": "^1.4",
         "drupal/simple_taxonomy_menu": "^2.1",
-        "drupal/views_add_button": "^2.0",
-        "poppopstudio/poppop_base": "dev-main"
+        "drupal/views_add_button": "^2.0"
     }
 }
