@@ -1,7 +1,7 @@
 {
     "name": "poppopstudio/ascend_resource",
     "description": "Ascend project resource",
-    "type": "drupal-module-custom",
+    "type": "drupal-custom-module",
     "authors": [
         {
             "name": "NikLP",
