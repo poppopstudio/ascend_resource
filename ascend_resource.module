@@ -6,74 +6,11 @@
  */
 
 use Drupal\ascend_resource\Hook\ResourceHooks;
-use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\views\Entity\View;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\LegacyHook;
-use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Render\Element;
-use Drupal\taxonomy\Entity\Vocabulary;
-
-/**
- * Implements hook_entity_view_alter().
- */
-function ascend_resource_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
-
-  /** For Category taxonomy terms.
-   *  - show the Resources embed view for leaf terms.
-   *  - show the Category children embed view for node terms.
-   */
-
-  if ($entity->getEntityTypeId() === 'taxonomy_term'
-    && $entity->bundle() === 'category'
-    && $display->getMode() == 'default') {  // NB!
-
-    $term_id = (int) $entity->id();
-
-    // Display the Category's children terms.
-    if (_ascend_resource_term_has_children($term_id)) {
-      $build['category_child_terms'] = views_embed_view('category_child_terms', 'embed_1', $term_id);
-      $build['category_child_terms']['#weight'] = 25;
-    }
-
-    // Display the Category's resources view.
-    else {
-      $build['category_resources'] = views_embed_view('category_resources', 'embed_1', $term_id);
-      $build['category_resources']['#weight'] = 25;
-    }
-  }
-}
-
-function _ascend_resource_term_has_children(int $tid) {
-  $query = \Drupal::entityQuery('taxonomy_term')
-    ->condition('parent', $tid)
-    ->accessCheck(TRUE)
-    ->count(); // We only need to know if there's some, or none.
-  return $query->execute();
-}
-
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-#[LegacyHook]
-function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
-  // Base field overrides required to set text_format, BUT...
-  // They don't work without the UI, so we have to force at save (import) time.
-  if ($entity->bundle() === 'category') {
-    $description = $entity->description;
-    if (!empty($description->value) && empty($description->format)) {
-      $description->format = 'plain_text';
-    }
-  }
-}
-
-
-/* HOOKY HOOKS! */
 
 /**
  * Legacy hook implementation.
@@ -82,7 +19,6 @@ function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
  */
 #[LegacyHook]
 function ascend_resource_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Does nothing
   \Drupal::service(ResourceHooks::class)->formAlter($form, $form_state, $form_id);
 }
 
@@ -92,20 +28,9 @@ function ascend_resource_form_alter(&$form, FormStateInterface $form_state, $for
  * @todo Remove this method when support for Drupal core < 11.1 is dropped.
  */
 #[LegacyHook]
-function ascend_resource_tokens_alter(array &$replacements, array $context, BubbleableMetadata $bubbleable_metadata) {
-  // Convert term description token to string and strip html tags.
-  // Without this, term desc is wrapped in a <p> tag.
-  if ($context['type'] == 'term') {
-    if (isset($replacements['[term:description]'])) {
-      $desc = (string) $replacements['[term:description]'];
-      $desc = strip_tags($desc);
-      $replacements['[term:description]'] = $desc;
-    }
-  }
+function ascend_resource_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  \Drupal::service(ResourceHooks::class)->entityViewAlter($build, $entity, $display);
 }
-
-
-/* THEME BASED */
 
 /**
  * Legacy hook implementation.
@@ -113,12 +38,8 @@ function ascend_resource_tokens_alter(array &$replacements, array $context, Bubb
  * @todo Remove this method when support for Drupal core < 11.1 is dropped.
  */
 #[LegacyHook]
-function ascend_resource_gin_content_form_routes(): array {
-  return [
-    // Resource custom entity type edit form handled by gin (to get sidebar).
-    'entity.resource.add_form',
-    'entity.resource.edit_form',
-  ];
+function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
+  \Drupal::service(ResourceHooks::class)->taxonomyTermPresave($entity);
 }
 
 /**
@@ -127,12 +48,6 @@ function ascend_resource_gin_content_form_routes(): array {
  *  https://www.drupal.org/project/field_group/issues/2859858
  */
 
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-#[LegacyHook]
 function ascend_resource_theme($existing, $type, $theme, $path) {
   return [
     'resource' => [
@@ -140,7 +55,6 @@ function ascend_resource_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
-
 
 function template_preprocess_resource(&$variables) {
   $variables['view_mode'] = $variables['elements']['#view_mode'];
@@ -150,4 +64,12 @@ function template_preprocess_resource(&$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
+}
+
+function ascend_resource_gin_content_form_routes(): array {
+  return [
+    // Resource custom entity type edit form handled by gin (to get sidebar).
+    'entity.resource.add_form',
+    'entity.resource.edit_form',
+  ];
 }
