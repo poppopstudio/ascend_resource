@@ -141,12 +141,7 @@ function ascend_resource_theme($existing, $type, $theme, $path) {
   ];
 }
 
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-#[LegacyHook]
+
 function template_preprocess_resource(&$variables) {
   $variables['view_mode'] = $variables['elements']['#view_mode'];
 
