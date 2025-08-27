@@ -14,6 +14,7 @@ dependencies:
   - filefield_paths:filefield_paths
   - inline_entity_form:inline_entity_form
   - media:media
+  - media_entity_download:media_entity_download
   - readonly_field_widget:readonly_field_widget
   - role_delegation:role_delegation
   - simple_taxonomy_menu:simple_taxonomy_menu
