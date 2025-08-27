@@ -3,9 +3,13 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - media.type.document
   module:
     - ascend_resource
+    - contextual
     - filter
+    - media
+    - node
     - system
     - toolbar
 id: resource_manager
@@ -14,11 +18,16 @@ weight: 5
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
   - 'access resource overview'
   - 'access toolbar'
+  - 'create document media'
   - 'create resource'
   - 'delete any resource'
+  - 'delete own document media'
   - 'delete own resource'
+  - 'edit own document media'
   - 'update any resource'
   - 'update own resource'
   - 'use text format basic_html'
