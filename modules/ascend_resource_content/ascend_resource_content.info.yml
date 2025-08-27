@@ -1,8 +1,0 @@
-name: Ascend resource content
-type: module
-package: Ascend
-description: Default content for development & demonstration.
-core_version_requirement: ^10 || ^11
-dependencies:
-  - taxonomy:taxonomy
-  - default_content:default_content
