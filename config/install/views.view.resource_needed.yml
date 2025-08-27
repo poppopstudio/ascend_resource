@@ -4,6 +4,8 @@ dependencies:
   config:
     - system.menu.main
     - taxonomy.vocabulary.category
+    - user.role.administrator
+    - user.role.resource_manager
   module:
     - ascend_resource
     - taxonomy
@@ -153,9 +155,11 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            administrator: administrator
+            resource_manager: resource_manager
       cache:
         type: tag
         options: {  }
@@ -327,7 +331,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - user.roles
       tags: {  }
   page_1:
     id: page_1
@@ -351,5 +355,5 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - user.roles
       tags: {  }
