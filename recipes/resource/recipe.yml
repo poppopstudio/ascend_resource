@@ -10,6 +10,8 @@ install:
   - ascend_resource
 config:
   strict: true
+  import:
+    ascend_resource: '*'
   actions:
     user.role.anonymous:
       grantPermissions:
