@@ -25,7 +25,7 @@ config:
       grantPermissions:
         - 'edit terms in category'
         - 'use taxonomy_term.edit_info form mode'
-      # Access the Files overview page ?
+        # Access the Files overview page ?
     user.role.user_manager:
       grantPermissions:
         - 'assign resource_manager role'
