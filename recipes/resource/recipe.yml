@@ -1,0 +1,24 @@
+name: 'Ascend resource setup'
+description: 'Ascend resource setup recipe - installs modules and sets up config'
+type: 'Content type'
+recipes:
+  # Can't depend on other recipes outside of this dir or core!
+install:
+  - form_mode_manager
+  - media
+  - media_entity_download
+  - ascend_resource
+config:
+  strict: true
+  actions:
+    user.role.anonymous:
+      grantPermissions:
+        - 'view resources'
+        - 'download media'
+    user.role.content_manager:
+      grantPermissions:
+        - 'edit terms in category'
+        - 'use taxonomy_term.edit_info form mode'
+      # Access the Files overview page ?
+    user.role.user_manager:
+      grantPermission: 'assign resource_manager role'
