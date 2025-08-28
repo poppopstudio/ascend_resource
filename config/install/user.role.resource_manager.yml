@@ -35,3 +35,4 @@ permissions:
   - 'use text format basic_html'
   - 'view own unpublished resource'
   - 'view resource'
+  - 'view the administration theme'
