@@ -3,3 +3,5 @@ description: 'Ascend resource demo content - installs terms for category, stage,
 type: 'Default content'
 recipes:
   - resource
+install:
+  - ascend_resource
