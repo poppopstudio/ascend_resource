@@ -13,9 +13,9 @@ config:
   actions:
     user.role.anonymous:
       grantPermissions:
-        - 'view resources'
+        - 'view resource'
         - 'download media'
-    user.role.content_manager:
+    user.role.content_editor:
       grantPermissions:
         - 'edit terms in category'
         - 'use taxonomy_term.edit_info form mode'
