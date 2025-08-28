@@ -1,7 +1,6 @@
 # Ascend resource
 
-TODO: write some documentation.
+Provides code and config for Ascend Resource kit.
 
 ## Requirements
 
-This module requires no modules outside of Drupal core.

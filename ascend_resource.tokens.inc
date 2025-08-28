@@ -2,7 +2,7 @@
 
 /**
  * @file
- * TODO: Enter file description here.
+ * Provide token hooks for resource.
  */
 
 use Drupal\ascend_resource\Hook\ResourceHooks;
