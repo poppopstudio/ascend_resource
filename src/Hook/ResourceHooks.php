@@ -2,11 +2,13 @@
 
 namespace Drupal\ascend_resource\Hook;
 
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Contains hook implementations for the Ascend resource module.
@@ -92,4 +94,51 @@ class ResourceHooks {
     }
   }
 
+  /**
+   * Implements hook_entity_form_display_alter
+   */
+  #[Hook('entity_form_display_alter')]
+  public function entityFormDisplayAlter(EntityFormDisplayInterface $form_display, array $context) {
+
+    // If I tweak this in the future this is how to switch off readonly for edit forms.
+    // We might want this if there needed to be a perm for 'edit category'.
+    // ** TWEAKED (uncommented) **
+    if ($context['form_mode'] === 'edit') {
+      return;
+    }
+
+    $types = ['resource', ];
+
+    // Change the category field to a readonly widget if ?cid is a known term.
+    // if ($context['entity_type'] == 'node' && in_array($context['bundle'], $types)) {
+    if (in_array($context['entity_type'], $types)) {
+
+      $category_id = \Drupal::request()->get('cid');
+      if (!isset($category_id) || !is_numeric($category_id)) {
+        return;
+      }
+
+      $category_term = Term::load($category_id);
+      if (!$category_term instanceof Term || !($category_term->bundle() === 'category')) {
+        return;
+      }
+
+      $component = $form_display->getComponent('category'); // field name
+
+      if ($component) {
+        $component['type'] = 'readonly_field_widget';
+        $component['settings'] = [
+          'label' => 'inline',
+          'formatter_type' => 'cshs_full_hierarchy',
+          // 'formatter_settings' => [
+          //   // 'entity_reference_label' => ['link' => FALSE],
+          //   'clear' => TRUE,
+          //   'format' => "[term:parents:join: » ] » [term:description]",
+          // ]
+        ];
+
+        $form_display->setComponent('category', $component);
+      }
+    }
+  }
 }

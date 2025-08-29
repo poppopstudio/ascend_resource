@@ -6,6 +6,7 @@
  */
 
 use Drupal\ascend_resource\Hook\ResourceHooks;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -41,6 +42,18 @@ function ascend_resource_entity_view_alter(array &$build, EntityInterface $entit
 function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
   \Drupal::service(ResourceHooks::class)->taxonomyTermPresave($entity);
 }
+
+
+/**
+ * Legacy hook implementation.
+ *
+ * @todo Remove this method when support for Drupal core < 11.1 is dropped.
+ */
+#[LegacyHook]
+function ascend_resource_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
+  \Drupal::service(ResourceHooks::class)->entityFormDisplayAlter($form_display, $context);
+}
+
 
 /**
  * These two function were required in order to add compatibility with
