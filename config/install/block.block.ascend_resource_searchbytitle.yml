@@ -19,13 +19,13 @@ settings:
   label: ''
   label_display: '0'
   provider: configurable_views_filter_block
-  views_label: ''
   visible_filters:
     title: title
   no_groups: false
   no_reset: true
   no_sort: false
   no_pager: false
+  views_label: ''
 visibility:
   request_path:
     id: request_path

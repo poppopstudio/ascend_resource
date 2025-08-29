@@ -28,7 +28,7 @@ class ResourceHooks {
    */
   #[Hook('entity_view_alter')]
   public function entityViewAlter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
-    /** For Category taxonomy terms.
+    /** For Category taxonomy terms in 'default' view mode.
      *  - show the Resources embed view for leaf terms.
      *  - show the Category children embed view for node terms.
      */
@@ -37,7 +37,7 @@ class ResourceHooks {
       $entity->getEntityTypeId() === 'taxonomy_term'
       && $entity->bundle() === 'category'
       && $display->getMode() == 'default'
-    ) {  // NB!
+    ) {
 
       $term_id = (int) $entity->id();
 
@@ -68,8 +68,9 @@ class ResourceHooks {
    */
   #[Hook('taxonomy_term_presave')]
   public function taxonomyTermPresave(EntityInterface $entity) {
-    // Base field overrides required to set text_format, BUT...
+    // Base field overrides required to set description text_format, BUT...
     // They don't work without the UI, so we have to force at save (import) time.
+    // Might want to enforce for all vocabs not just category?
     if ($entity->bundle() === 'category') {
       $description = $entity->description;
       if (!empty($description->value) && empty($description->format)) {
@@ -100,43 +101,32 @@ class ResourceHooks {
   #[Hook('entity_form_display_alter')]
   public function entityFormDisplayAlter(EntityFormDisplayInterface $form_display, array $context) {
 
-    // If I tweak this in the future this is how to switch off readonly for edit forms.
-    // We might want this if there needed to be a perm for 'edit category'.
-    // ** TWEAKED (uncommented) **
+    // Only adjust the widget if in Add mode.
     if ($context['form_mode'] === 'edit') {
       return;
     }
 
-    $types = ['resource', ];
+    // Change the category field to a readonly widget...
+    if ($context['entity_type'] === 'resource') {
 
-    // Change the category field to a readonly widget if ?cid is a known term.
-    // if ($context['entity_type'] == 'node' && in_array($context['bundle'], $types)) {
-    if (in_array($context['entity_type'], $types)) {
-
+      // ...if ?cid is set and numeric.
       $category_id = \Drupal::request()->get('cid');
       if (!isset($category_id) || !is_numeric($category_id)) {
         return;
       }
 
+      // ...if ?cid is a legit category term.
       $category_term = Term::load($category_id);
       if (!$category_term instanceof Term || !($category_term->bundle() === 'category')) {
         return;
       }
 
       $component = $form_display->getComponent('category'); // field name
-
       if ($component) {
         $component['type'] = 'readonly_field_widget';
         $component['settings'] = [
-          'label' => 'inline',
           'formatter_type' => 'cshs_full_hierarchy',
-          // 'formatter_settings' => [
-          //   // 'entity_reference_label' => ['link' => FALSE],
-          //   'clear' => TRUE,
-          //   'format' => "[term:parents:join: » ] » [term:description]",
-          // ]
         ];
-
         $form_display->setComponent('category', $component);
       }
     }
