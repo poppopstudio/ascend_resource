@@ -4,7 +4,6 @@ type: 'Content type'
 recipes:
   # Can't depend on other recipes outside of this dir or core!
 install:
-  - form_mode_manager
   - media
   - media_entity_download
   - ascend_resource
