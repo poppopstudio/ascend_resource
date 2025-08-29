@@ -12,6 +12,11 @@ config:
   import:
     ascend_resource: '*'
   actions:
+    form_mode_manager.links:
+      simpleConfigUpdate:
+        local_tasks:
+          resource:
+            position: primary
     user.role.anonymous:
       grantPermissions:
         - 'view resource'
