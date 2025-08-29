@@ -37,6 +37,7 @@ use Drupal\user\EntityOwnerTrait;
  *     },
  *     "form" = {
  *       "default" = "Drupal\ascend_resource\Form\ResourceForm",
+ *       "edit" = "Drupal\ascend_resource\Form\ResourceForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "revision-delete" = \Drupal\Core\Entity\Form\RevisionDeleteForm::class,
  *       "revision-revert" = \Drupal\Core\Entity\Form\RevisionRevertForm::class,

@@ -53,8 +53,6 @@ config_devel:
   - field.storage.resource.ascend_res_stage
   - field.storage.resource.ascend_res_usage
   - field.storage.taxonomy_term.ascend_info
-  - form_mode_manager.links
-  - form_mode_manager.settings
   - media.type.document
   - taxonomy.vocabulary.pricing
   - taxonomy.vocabulary.stage
