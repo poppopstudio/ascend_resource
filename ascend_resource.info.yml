@@ -55,7 +55,6 @@ config_devel:
   - field.storage.taxonomy_term.ascend_info
   - media.type.document
   - taxonomy.vocabulary.pricing
-  - taxonomy.vocabulary.stage
   - user.role.resource_manager
   - views.view.category_child_terms
   - views.view.category_parent_terms
