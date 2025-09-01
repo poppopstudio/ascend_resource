@@ -111,7 +111,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   ascend_res_stage:
-    type: options_select
+    type: options_buttons
     weight: 6
     region: content
     settings: {  }
