@@ -138,7 +138,6 @@ class Resource extends EditorialContentEntityBase implements ResourceInterface {
       ->setLabel(t("Authored on"))
       ->setDescription(t("The date & time that the resource was created."))
       ->setRevisionable(TRUE)
-      ->setTranslatable(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'timestamp',
@@ -155,7 +154,6 @@ class Resource extends EditorialContentEntityBase implements ResourceInterface {
       ->setLabel(t("Changed"))
       ->setDescription(t("The time that the resource was last edited."))
       ->setRevisionable(TRUE)
-      ->setTranslatable(TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayConfigurable('form', TRUE);
 
@@ -163,7 +161,6 @@ class Resource extends EditorialContentEntityBase implements ResourceInterface {
       ->setLabel(t("Category"))
       ->setDescription(t("The resource's category."))
       ->setRevisionable(TRUE)
-      ->setTranslatable(TRUE)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE)
