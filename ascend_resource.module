@@ -81,7 +81,7 @@ function template_preprocess_resource(&$variables) {
 
 function ascend_resource_gin_content_form_routes(): array {
   return [
-    // Resource custom entity type edit form handled by gin (to get sidebar).
+    // Resource entity edit forms handled by gin (to get sidebar).
     'entity.resource.add_form',
     'entity.resource.edit_form',
   ];
