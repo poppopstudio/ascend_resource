@@ -139,7 +139,7 @@ class Resource extends EditorialContentEntityBase implements ResourceInterface {
       ->setDescription(t("The date & time that the resource was created."))
       ->setRevisionable(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
+        'label' => 'inline',
         'type' => 'timestamp',
         'weight' => 0,
       ])
