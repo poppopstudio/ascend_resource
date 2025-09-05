@@ -54,6 +54,8 @@ config_devel:
   - field.storage.resource.ascend_res_usage
   - field.storage.taxonomy_term.ascend_info
   - media.type.document
+  - system.action.user_add_role_action.resource_manager
+  - system.action.user_remove_role_action.resource_manager
   - taxonomy.vocabulary.pricing
   - taxonomy.vocabulary.stage
   - user.role.resource_manager
