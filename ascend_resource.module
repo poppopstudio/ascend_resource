@@ -56,7 +56,7 @@ function ascend_resource_entity_form_display_alter(EntityFormDisplayInterface $f
 
 
 /**
- * These two function were required in order to add compatibility with
+ * These two functions were required in order to add compatibility with
  *  field_group module. This also necessitated the resource.html.twig template.
  *  https://www.drupal.org/project/field_group/issues/2859858
  */
