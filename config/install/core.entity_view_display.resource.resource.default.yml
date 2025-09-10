@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.resource.resource.ascend_document
     - field.field.resource.resource.ascend_res_desc
+    - field.field.resource.resource.ascend_res_evidence
     - field.field.resource.resource.ascend_res_link
     - field.field.resource.resource.ascend_res_pricing
     - field.field.resource.resource.ascend_res_stage
@@ -160,6 +161,7 @@ content:
     weight: 0
     region: content
 hidden:
+  ascend_res_evidence: true
   changed: true
   created: true
   status: true

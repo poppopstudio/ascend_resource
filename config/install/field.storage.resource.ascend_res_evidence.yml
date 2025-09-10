@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ascend_resource
+    - link
+id: resource.ascend_res_evidence
+field_name: ascend_res_evidence
+entity_type: resource
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
