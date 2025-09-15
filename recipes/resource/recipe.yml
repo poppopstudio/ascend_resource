@@ -37,7 +37,7 @@ config:
         name: ascend_info
         options:
           type: text_textarea
-          weight: 3
+          weight: 5
           region: content
           settings:
             rows: 5
