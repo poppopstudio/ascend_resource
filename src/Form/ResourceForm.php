@@ -15,6 +15,48 @@ class ResourceForm extends ContentEntityForm {
    */
   public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
+    /** @var \Drupal\ascend_resource\Entity\Resource $resourcep */
+    $resource = $this->entity;
+
+    if ($this->operation == 'edit') {
+      $form['#title'] = $this->t('<em>Edit @type</em> @title', [
+        '@type' => 'resource',
+        '@title' => $resource->label(),
+      ]);
+    }
+
+    // Emulates entity info behaviour similar to nodes (guess where it's from).
+    $form['meta'] = [
+      '#type' => 'details',
+      '#group' => 'advanced',
+      '#weight' => -100,
+      '#title' => $this->t('Status'),
+      '#attributes' => ['class' => ['entity-meta__header']],
+      '#tree' => TRUE,
+      '#access' => $this->currentUser()->hasPermission('update any resource'),
+    ];
+    $form['meta']['published'] = [
+      '#type' => 'item',
+      '#markup' => $resource->isPublished() ? $this->t('Published') : $this->t('Not published'),
+      // This line seems redundant but the above line doesn't work anyway? Only shows published for either.
+      '#access' => !$resource->isNew(),
+      '#wrapper_attributes' => ['class' => ['entity-meta__title']],
+    ];
+    $form['meta']['changed'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Last saved'),
+      // '#markup' => !$resource->isNew() ? $this->dateFormatter->format($resource->getChangedTime(), 'short') : $this->t('Not saved yet'),
+      '#markup' => !$resource->isNew() ? \Drupal::service('date.formatter')->format($resource->getChangedTime(), 'short') : $this->t('Not saved yet'),
+      '#wrapper_attributes' => ['class' => ['entity-meta__last-saved']],
+    ];
+    $form['meta']['author'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Author'),
+      '#markup' => $resource->getOwner()->getAccountName(),
+      '#wrapper_attributes' => ['class' => ['entity-meta__author']],
+    ];
+
+
     return $form;
   }
 
