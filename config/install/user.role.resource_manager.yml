@@ -2,12 +2,10 @@ langcode: en-gb
 status: true
 dependencies:
   config:
-    - filter.format.basic_html
     - media.type.document
   module:
     - ascend_resource
     - contextual
-    - filter
     - media
     - node
     - system
@@ -32,7 +30,6 @@ permissions:
   - 'edit own document media'
   - 'update any resource'
   - 'update own resource'
-  - 'use text format basic_html'
   - 'view own unpublished resource'
   - 'view resource'
   - 'view the administration theme'
