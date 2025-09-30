@@ -217,9 +217,9 @@ display:
           entity_type: taxonomy_term
           entity_field: parent
           plugin_id: taxonomy
-          default_action: ignore
+          default_action: 'access denied'
           exception:
-            value: all
+            value: ''
             title_enable: false
             title: All
           title_enable: false
@@ -240,16 +240,11 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: true
+          specify_validation: false
           validate:
-            type: 'entity:taxonomy_term'
+            type: none
             fail: 'not found'
-          validate_options:
-            bundles:
-              category: category
-            access: true
-            operation: view
-            multiple: 0
+          validate_options: {  }
           break_phrase: false
           not: false
       filters:
