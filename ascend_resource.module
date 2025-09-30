@@ -11,6 +11,7 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\LegacyHook;
+use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Render\Element;
 
 /**
@@ -43,7 +44,6 @@ function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
   \Drupal::service(ResourceHooks::class)->taxonomyTermPresave($entity);
 }
 
-
 /**
  * Legacy hook implementation.
  *
@@ -52,6 +52,16 @@ function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
 #[LegacyHook]
 function ascend_resource_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
   \Drupal::service(ResourceHooks::class)->entityFormDisplayAlter($form_display, $context);
+}
+
+/**
+ * Legacy hook implementation.
+ *
+ * @todo Remove this method when support for Drupal core < 11.1 is dropped.
+ */
+#[LegacyHook]
+function ascend_resource_auto_username_alter(array &$data) {
+  \Drupal::service(ResourceHooks::class)->autoUsernameAlter($data);
 }
 
 

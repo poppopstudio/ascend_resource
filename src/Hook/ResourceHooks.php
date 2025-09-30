@@ -23,6 +23,7 @@ class ResourceHooks {
     return;
   }
 
+
   /**
    * Implements hook_entity_view_alter().
    */
@@ -63,6 +64,7 @@ class ResourceHooks {
     return $query->execute();
   }
 
+
   /**
    * Implements hook_ENTITY_TYPE_presave().
    */
@@ -79,21 +81,6 @@ class ResourceHooks {
     }
   }
 
-  /**
-   * Implements hook_tokens_alter().
-   */
-  #[Hook('tokens_alter')]
-  public function tokensAlter(array &$replacements, array $context, BubbleableMetadata $bubbleable_metadata) {
-    // Convert term description token to string and strip html tags.
-    // Without this, term desc is wrapped in a <p> tag.
-    if ($context['type'] == 'term') {
-      if (isset($replacements['[term:description]'])) {
-        $desc = (string) $replacements['[term:description]'];
-        $desc = strip_tags($desc);
-        $replacements['[term:description]'] = $desc;
-      }
-    }
-  }
 
   /**
    * Implements hook_entity_form_display_alter
@@ -131,4 +118,34 @@ class ResourceHooks {
       }
     }
   }
+
+
+  /* These two functions need to be in a base module ideally! */
+
+  /**
+   * Implements hook_tokens_alter().
+   */
+  #[Hook('tokens_alter')]
+  public function tokensAlter(array &$replacements, array $context, BubbleableMetadata $bubbleable_metadata) {
+    // Convert term description token to string and strip html tags.
+    // Without this, term desc is wrapped in a <p> tag.
+    if ($context['type'] == 'term') {
+      if (isset($replacements['[term:description]'])) {
+        $desc = (string) $replacements['[term:description]'];
+        $desc = strip_tags($desc);
+        $replacements['[term:description]'] = $desc;
+      }
+    }
+  }
+
+
+  /**
+   * Implements hook_auto_username_alter().
+   */
+  #[Hook('auto_username_alter')]
+  public function autoUsernameAlter(array &$data): void {
+    // Force usernames to be all lower case.
+    // $data['username'] = strtolower($data['username']);
+  }
+
 }
