@@ -20,9 +20,20 @@ class ResourceHooks {
    */
   #[Hook('form_alter')]
   public function formAlter(&$form, FormStateInterface $form_state, $form_id) {
+    // \Drupal::messenger()->addMessage(t("Form ID: @fid", ['@fid' => $form_id]));
     return;
   }
 
+
+  /**
+   * Implements hook_form_FORM_ID_alter().
+   */
+  #[Hook('form_taxonomy_term_category_edit_info_form_alter')]
+  public function formTaxonomyTermCategoryEditInfoFormAlter(&$form, FormStateInterface $form_state, $form_id) {
+    // Hide the relations element, we don't want it changed in this form mode.
+    $form['relations']['#access'] = FALSE;
+    return;
+  }
 
   /**
    * Implements hook_entity_view_alter().

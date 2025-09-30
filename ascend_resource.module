@@ -93,5 +93,11 @@ function ascend_resource_gin_content_form_routes(): array {
     // Resource entity edit forms handled by gin (to get sidebar).
     'entity.resource.add_form',
     'entity.resource.edit_form',
+    // Taxonomy edit forms too.
+    'entity.taxonomy_term.edit_form.edit_info',
   ];
+}
+
+function ascend_resource_form_taxonomy_term_category_edit_info_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  \Drupal::service(ResourceHooks::class)->formTaxonomyTermCategoryEditInfoFormAlter($form, $form_state, $form_id);
 }
