@@ -9,7 +9,6 @@ dependencies:
     - media
     - node
     - system
-    - toolbar
 id: resource_manager
 label: 'Resource manager'
 weight: 9
@@ -18,18 +17,21 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access media overview'
   - 'access resource overview'
-  - 'access toolbar'
   - 'create document media'
   - 'create resource'
   - 'delete any document media'
+  - 'delete any document media revisions'
   - 'delete any resource'
   - 'delete own document media'
   - 'delete own resource'
   - 'edit any document media'
   - 'edit own document media'
+  - 'revert any document media revisions'
   - 'update any resource'
   - 'update own resource'
+  - 'view any document media revisions'
   - 'view own unpublished resource'
   - 'view resource'
   - 'view the administration theme'
