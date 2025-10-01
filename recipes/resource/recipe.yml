@@ -28,10 +28,17 @@ config:
       grantPermissions:
         - 'edit terms in category'
         - 'use taxonomy_term.edit_info form mode'
-        # Access the Files overview page ?
+        # Access the Files overview page?
     user.role.user_manager:
       grantPermissions:
         - 'assign resource_manager role'
+    user.role.site_manager:
+      grantPermissions:
+        - 'create terms in pricing'
+        - 'create terms in stage'
+        - 'edit terms in pricing'
+        - 'edit terms in stage'
+        - 'use taxonomy_term.default form mode'
     core.entity_form_display.taxonomy_term.category.default:
       setComponent:
         name: ascend_info
