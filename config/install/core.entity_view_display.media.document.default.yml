@@ -19,10 +19,10 @@ content:
       url_only: false
       url_plain: false
       rel: '0'
-      target: '0'
-      disposition: attachment
+      target: _blank
+      disposition: inline
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   created: true
