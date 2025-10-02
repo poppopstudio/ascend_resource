@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.ascend_media_desc
+    - media.type.document
+id: media.document.ascend_media_desc
+field_name: ascend_media_desc
+entity_type: media
+bundle: document
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
