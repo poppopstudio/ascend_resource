@@ -30,6 +30,7 @@
         "drupal/readonly_field_widget": "^2.1",
         "drupal/redirect": "^1.11",
         "drupal/role_delegation": "^1.4",
+        "drupal/search_api": "^1.39",
         "drupal/simple_taxonomy_menu": "^2.1",
         "drupal/token": "^1.15",
         "drupal/views_add_button": "^2.0"
