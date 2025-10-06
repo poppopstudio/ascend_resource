@@ -1,0 +1,150 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.resource.search_index
+    - field.field.resource.resource.ascend_document
+    - field.field.resource.resource.ascend_res_desc
+    - field.field.resource.resource.ascend_res_evidence
+    - field.field.resource.resource.ascend_res_link
+    - field.field.resource.resource.ascend_res_pricing
+    - field.field.resource.resource.ascend_res_stage
+    - field.field.resource.resource.ascend_res_usage
+  module:
+    - ascend_resource
+    - cshs
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_usage:
+      children:
+        - ascend_res_desc
+        - ascend_res_usage
+      label: 'How to use'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: field_group_table
+      format_settings:
+        label_visibility: '3'
+        desc: ''
+        desc_visibility: '2'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '2'
+        empty_field_placeholder: ''
+        hide_table_if_empty: '1'
+        id: ''
+        classes: ''
+        show_empty_fields: 0
+        label_as_html: 0
+        table_row_striping: 0
+        always_show_field_label: 0
+        always_show_field_value: 0
+    group_content:
+      children:
+        - ascend_res_link
+        - ascend_document
+      label: Content
+      parent_name: ''
+      region: hidden
+      weight: 3
+      format_type: field_group_table
+      format_settings:
+        label_visibility: '3'
+        desc: ''
+        desc_visibility: '2'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '1'
+        empty_field_placeholder: ''
+        hide_table_if_empty: '1'
+        id: ''
+        classes: ''
+        show_empty_fields: 0
+        label_as_html: 0
+        table_row_striping: 0
+        always_show_field_label: 0
+        always_show_field_value: 0
+    group_details:
+      children:
+        - ascend_res_pricing
+        - ascend_res_stage
+      label: Details
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: field_group_table
+      format_settings:
+        label_visibility: '3'
+        desc: ''
+        desc_visibility: '2'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '1'
+        empty_field_placeholder: ''
+        hide_table_if_empty: '1'
+        id: ''
+        classes: ''
+        show_empty_fields: 0
+        label_as_html: 0
+        table_row_striping: 0
+        always_show_field_label: 0
+        always_show_field_value: 0
+id: resource.resource.search_index
+targetEntityType: resource
+bundle: resource
+mode: search_index
+content:
+  ascend_res_desc:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  ascend_res_pricing:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  ascend_res_stage:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  ascend_res_usage:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  category:
+    type: cshs_flexible_hierarchy
+    label: inline
+    settings:
+      format: '[term:parents:join: » ] » [term:description]'
+      linked: 0
+      reverse: 0
+      clear: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ascend_document: true
+  ascend_res_evidence: true
+  ascend_res_link: true
+  changed: true
+  created: true
+  search_api_excerpt: true
+  status: true
+  uid: true

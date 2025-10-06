@@ -1,0 +1,20 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_result
+    - field.field.taxonomy_term.category.ascend_info
+    - taxonomy.vocabulary.category
+id: taxonomy_term.category.search_result
+targetEntityType: taxonomy_term
+bundle: category
+mode: search_result
+content:
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ascend_info: true
+  description: true

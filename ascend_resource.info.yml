@@ -34,8 +34,14 @@ config_devel:
   - core.entity_form_display.taxonomy_term.category.edit_info
   - core.entity_form_mode.taxonomy_term.edit_info
   - core.entity_view_display.media.document.default
+  - core.entity_view_display.node.page.search_index
+  - core.entity_view_display.node.page.search_result
   - core.entity_view_display.resource.resource.default
+  - core.entity_view_display.resource.resource.search_index
+  - core.entity_view_display.resource.resource.search_result
   - core.entity_view_display.taxonomy_term.category.default
+  - core.entity_view_display.taxonomy_term.category.search_index
+  - core.entity_view_display.taxonomy_term.category.search_result
   - core.entity_view_mode.node.search_index
   - core.entity_view_mode.node.search_result
   - core.entity_view_mode.resource.search_index
