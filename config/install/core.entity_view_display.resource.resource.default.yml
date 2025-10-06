@@ -164,5 +164,6 @@ hidden:
   ascend_res_evidence: true
   changed: true
   created: true
+  search_api_excerpt: true
   status: true
   uid: true
