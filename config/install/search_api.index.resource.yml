@@ -2,6 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
+    - core.entity_view_mode.resource.search_index
+    - core.entity_view_mode.taxonomy_term.search_index
     - search_api.server.resource
   module:
     - ascend_resource
@@ -11,7 +14,24 @@ id: resource
 name: Resource
 description: 'Search index for Resource server'
 read_only: false
-field_settings: {  }
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          ':default': ''
+          page: search_index
+        'entity:resource':
+          ':default': ''
+          resource: search_index
+        'entity:taxonomy_term':
+          ':default': ''
+          category: search_index
 datasource_settings:
   'entity:node':
     bundles:
