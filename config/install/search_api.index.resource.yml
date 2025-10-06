@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.resource
+  module:
+    - ascend_resource
+    - node
+    - taxonomy
+id: resource
+name: Resource
+description: 'Search index for Resource server'
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - page
+    languages:
+      default: true
+      selected: {  }
+  'entity:resource':
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: false
+      selected:
+        - category
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: resource

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: resource
+name: Resource
+description: 'Ascend Resource server - search resources, basic pages and category terms/fields '
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: prefix
+  phrase: bigram
