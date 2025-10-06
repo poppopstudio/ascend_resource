@@ -1,0 +1,10 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - ascend_resource
+id: resource.search_result
+label: 'Search result highlighting input'
+description: ''
+targetEntityType: resource
+cache: true
