@@ -30,7 +30,7 @@ class ResourceHooks {
    */
   #[Hook('form_taxonomy_term_category_edit_info_form_alter')]
   public function formTaxonomyTermCategoryEditInfoFormAlter(&$form, FormStateInterface $form_state, $form_id) {
-    // Hide the relations element, we don't want it changed in this form mode.
+    // Hide taxonomy term relations element; don't change in this form mode.
     $form['relations']['#access'] = FALSE;
     return;
   }
@@ -40,7 +40,8 @@ class ResourceHooks {
    */
   #[Hook('entity_view_alter')]
   public function entityViewAlter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
-    /** For Category taxonomy terms in 'default' view mode.
+    /**
+     * For Category taxonomy terms in 'default' view mode.
      *  - show the Resources embed view for leaf terms.
      *  - show the Category children embed view for node terms.
      */
@@ -81,9 +82,11 @@ class ResourceHooks {
    */
   #[Hook('taxonomy_term_presave')]
   public function taxonomyTermPresave(EntityInterface $entity) {
-    // Base field overrides required to set description text_format, BUT...
-    // They don't work without the UI, so we have to force at save (import) time.
-    // Might want to enforce for all vocabs not just category?
+    /**
+     * Base field overrides required to set description text_format, BUT...
+     * They don't work without the UI, so we have to force at save (import) time.
+     * Might want to enforce for all vocabs not just category?
+     */
     if ($entity->bundle() === 'category') {
       $description = $entity->description;
       if (!empty($description->value) && empty($description->format)) {

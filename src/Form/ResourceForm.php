@@ -56,7 +56,6 @@ class ResourceForm extends ContentEntityForm {
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
-
     return $form;
   }
 
