@@ -19,6 +19,13 @@ config:
       simpleConfigUpdate:
         local_tasks.resource:
           position: primary
+    content_lock.settings:
+      simpleConfigUpdate:
+        types.resource:
+          '*': '*'
+        form_op_lock.resource:
+          mode: 0
+          values: {  }
     user.role.anonymous:
       grantPermissions:
         - 'view resource'
