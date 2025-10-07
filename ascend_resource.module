@@ -94,6 +94,7 @@ function ascend_resource_gin_content_form_routes(): array {
     'entity.resource.add_form',
     'entity.resource.edit_form',
     // Taxonomy edit forms too.
+    'entity.taxonomy_term.edit_form',
     'entity.taxonomy_term.edit_form.edit_info',
   ];
 }
