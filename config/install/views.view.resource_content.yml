@@ -7,7 +7,7 @@ dependencies:
 id: resource_content
 label: Resources
 module: views
-description: 'Resource content view to override the basic one provided by the module.'
+description: 'Content view to override the basic one provided by the module.'
 tag: ''
 base_table: resource_field_data
 base_field: resource_id
