@@ -25,8 +25,7 @@ dependencies:
 
 config_devel:
   - block.block.ascend_categories_block
-  - block.block.ascend_resource_searchbyterm
-  - block.block.ascend_resource_searchbytitle
+  - block.block.ascend_resource_search
   - core.base_field_override.resource.resource.category
   - core.base_field_override.taxonomy_term.category.description
   - core.entity_form_display.media.document.default
@@ -78,8 +77,9 @@ config_devel:
   - taxonomy.vocabulary.pricing
   - taxonomy.vocabulary.stage
   - user.role.resource_manager
+  - views.view.ascend_search
   - views.view.category_child_terms
   - views.view.category_parent_terms
   - views.view.category_resources
+  - views.view.resource_content
   - views.view.resource_needed
-  - views.view.resource_search

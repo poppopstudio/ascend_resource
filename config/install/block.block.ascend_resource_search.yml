@@ -1,33 +1,33 @@
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
-    - views.view.resource_search
+    - views.view.ascend_search
   module:
     - configurable_views_filter_block
     - system
   theme:
     - localgov_base
-id: ascend_resource_searchbyterm
+id: ascend_resource_search
 theme: localgov_base
 region: sidebar_first
 weight: 0
 provider: null
-plugin: 'configurable_views_filter_block_block:resource_search-page_1'
+plugin: 'configurable_views_filter_block_block:ascend_search-page_1'
 settings:
-  id: 'configurable_views_filter_block_block:resource_search-page_1'
+  id: 'configurable_views_filter_block_block:ascend_search-page_1'
   label: ''
   label_display: '0'
   provider: configurable_views_filter_block
+  views_label: ''
   visible_filters:
-    category_target_id: category_target_id
+    search_api_fulltext: search_api_fulltext
   no_groups: false
-  no_reset: false
+  no_reset: true
   no_sort: false
   no_pager: false
-  views_label: ''
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /resource
+    pages: /search
