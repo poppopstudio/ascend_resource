@@ -13,35 +13,7 @@ dependencies:
   module:
     - ascend_resource
     - cshs
-    - field_group
     - text
-third_party_settings:
-  field_group:
-    group_content:
-      children:
-        - ascend_document
-        - ascend_res_link
-      label: Content
-      parent_name: ''
-      region: hidden
-      weight: 10
-      format_type: field_group_table
-      format_settings:
-        label_visibility: '3'
-        desc: ''
-        desc_visibility: '2'
-        first_column: ''
-        second_column: ''
-        empty_label_behavior: '1'
-        empty_field_placeholder: ''
-        hide_table_if_empty: '1'
-        id: ''
-        classes: ''
-        show_empty_fields: 0
-        label_as_html: 0
-        table_row_striping: 0
-        always_show_field_label: 0
-        always_show_field_value: 0
 id: resource.resource.search_index
 targetEntityType: resource
 bundle: resource
@@ -49,7 +21,7 @@ mode: search_index
 content:
   ascend_res_desc:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -57,7 +29,7 @@ content:
     region: content
   ascend_res_pricing:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -65,7 +37,7 @@ content:
     region: content
   ascend_res_stage:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -73,19 +45,19 @@ content:
     region: content
   ascend_res_usage:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
   category:
     type: cshs_flexible_hierarchy
-    label: inline
+    label: hidden
     settings:
       format: '[term:parents:join: » ] » [term:description]'
+      clear: '1'
       linked: 0
       reverse: 0
-      clear: 0
     third_party_settings: {  }
     weight: 0
     region: content
