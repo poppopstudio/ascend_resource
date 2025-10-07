@@ -8,6 +8,7 @@ install:
   - media_entity_download
   - search_api
   - search_api_db
+  - search_api_autocomplete
   - ascend_resource
 config:
   strict: true
