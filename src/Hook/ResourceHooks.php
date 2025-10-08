@@ -67,6 +67,9 @@ class ResourceHooks {
 
       // Display the Category's resources view.
       else {
+        // @todo Add a lazy builder for this embedded view for performance, as
+        // without it, every term display page has its cache invalidated when
+        // any resource entity is changed or created.
         $build['category_resources'] = views_embed_view('category_resources', 'embed_1', $term_id);
         $build['category_resources']['#weight'] = 25;
 
