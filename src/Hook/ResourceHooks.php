@@ -36,22 +36,18 @@ class ResourceHooks {
     return;
   }
 
+
   /**
    * Implements hook_entity_view_alter().
    */
-  #[Hook('entity_view_alter')]
-  public function entityViewAlter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  #[Hook('taxonomy_term_view_alter')]
+  public function taxonomyTermViewAlter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
     /**
      * For Category taxonomy terms in 'default' view mode.
      *  - show the Resources embed view for leaf terms.
      *  - show the Category children embed view for node terms.
      */
-
-    if (
-      $entity->getEntityTypeId() === 'taxonomy_term'
-      && $entity->bundle() === 'category'
-      && $display->getMode() == 'default'
-    ) {
+    if ($entity->bundle() === 'category' && $display->getMode() == 'default') {
 
       $term_id = (int) $entity->id();
 
@@ -67,9 +63,11 @@ class ResourceHooks {
 
       // Display the Category's resources view.
       else {
-        // @todo Add a lazy builder for this embedded view for performance, as
-        // without it, every term display page has its cache invalidated when
-        // any resource entity is changed or created.
+        /**
+         * @todo Add a lazy builder for this embedded view for performance, as
+         * without it, every term display page has its cache invalidated when
+         * any resource entity is changed or created.
+         */
         $build['category_resources'] = views_embed_view('category_resources', 'embed_1', $term_id);
         $build['category_resources']['#weight'] = 25;
 
@@ -114,13 +112,13 @@ class ResourceHooks {
   #[Hook('entity_form_display_alter')]
   public function entityFormDisplayAlter(EntityFormDisplayInterface $form_display, array $context) {
 
-    // Only adjust the widget if in Add mode.
-    if ($context['form_mode'] === 'edit') {
-      return;
-    }
-
-    // Change the category field to a readonly widget...
+    // Change the resource category field to a readonly widget...
     if ($context['entity_type'] === 'resource') {
+
+      // Only adjust the widget if in Add mode.
+      if ($context['form_mode'] === 'edit') {
+        return;
+      }
 
       // ...if ?cid is set and numeric.
       $category_id = \Drupal::request()->get('cid');
@@ -134,7 +132,8 @@ class ResourceHooks {
         return;
       }
 
-      $component = $form_display->getComponent('category'); // field name
+      $component = $form_display->getComponent('category');
+      
       if ($component) {
         $component['type'] = 'readonly_field_widget';
         $component['settings'] = [
