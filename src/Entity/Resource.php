@@ -30,7 +30,7 @@ use Drupal\user\EntityOwnerTrait;
  *   translatable = "TRUE",
  *   collection_permission = "access resource overview",
  *   handlers = {
- *     "access" = "Drupal\entity\EntityAccessControlHandler",
+ *     "access" = "Drupal\ascend_resource\Entity\Handler\ResourceAccess",
  *     "route_provider" = {
  *       "html" = "Drupal\entity_admin_handlers\SingleBundleEntity\SingleBundleEntityHtmlRouteProvider",
  *       "revision" = \Drupal\Core\Entity\Routing\RevisionHtmlRouteProvider::class,
