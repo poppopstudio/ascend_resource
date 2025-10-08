@@ -4,8 +4,11 @@ package: Ascend
 description: 'Ascend resource'
 core_version_requirement: ^10 || ^11
 dependencies:
+  - auto_username:auto_username
   - configurable_views_filter_block:configurable_views_filter_block
+  - content_lock:content_lock
   - cshs:cshs
+  - diff:diff
   - entity:entity
   - entity_admin_handlers:entity_admin_handlers
   - epp:epp
@@ -20,6 +23,7 @@ dependencies:
   - role_delegation:role_delegation
   - simple_taxonomy_menu:simple_taxonomy_menu
   - taxonomy:taxonomy
+  - token:token
   - views:views
   - views_add_button:views_add_button
 
