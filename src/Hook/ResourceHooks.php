@@ -2,6 +2,7 @@
 
 namespace Drupal\ascend_resource\Hook;
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
@@ -54,17 +55,25 @@ class ResourceHooks {
 
       $term_id = (int) $entity->id();
 
+      $additional_cacheable_metadata = new CacheableMetadata();
+
       // Display the Category's children terms.
       if ($this->termHasChildren($term_id)) {
         $build['category_child_terms'] = views_embed_view('category_child_terms', 'embed_1', $term_id);
         $build['category_child_terms']['#weight'] = 25;
+
+        $additional_cacheable_metadata->addCacheTags(['taxonomy_term_list']);
       }
 
       // Display the Category's resources view.
       else {
         $build['category_resources'] = views_embed_view('category_resources', 'embed_1', $term_id);
         $build['category_resources']['#weight'] = 25;
+
+        $additional_cacheable_metadata->addCacheTags(['resource_list']);
       }
+
+      $additional_cacheable_metadata->applyTo($build);
     }
   }
 
