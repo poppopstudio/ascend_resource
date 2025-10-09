@@ -17,10 +17,15 @@ targetEntityType: resource
 bundle: resource
 mode: search_result
 content:
-  search_api_excerpt:
+  extra_field_ascend_entity_type_field:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   ascend_document: true
