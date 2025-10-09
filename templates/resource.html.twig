@@ -1,1 +1,4 @@
-{{ content }}
+{% if content.title and view_mode != 'full' %}
+  <h2><a href="{{ url }}">{{ content.title }}</a></h2>
+{% endif %}
+{{ content|without('title') }}

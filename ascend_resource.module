@@ -63,6 +63,16 @@ function ascend_resource_auto_username_alter(array &$data) {
   \Drupal::service(ResourceHooks::class)->autoUsernameAlter($data);
 }
 
+/**
+ * Legacy hook implementation.
+ *
+ * @todo Remove this method when support for Drupal core < 11.1 is dropped.
+ */
+#[LegacyHook]
+function ascend_resource_form_taxonomy_term_category_edit_info_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  \Drupal::service(ResourceHooks::class)->formTaxonomyTermCategoryEditInfoFormAlter($form, $form_state, $form_id);
+}
+
 
 /**
  * These two functions were required in order to add compatibility with
@@ -81,10 +91,15 @@ function ascend_resource_theme($existing, $type, $theme, $path) {
 function template_preprocess_resource(&$variables) {
   // Converts 'resource' data to 'content'.
   $variables['view_mode'] = $variables['elements']['#view_mode'];
+
   $variables += ['content' => []];
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
+
+  /** @var \Drupal\ascend_resource\Entity\Resource $resource */
+  $resource = $variables['elements']['#resource'];
+  $variables['url'] = !$resource->isNew() ? $resource->toUrl('canonical')->toString() : NULL;
 }
 
 function ascend_resource_gin_content_form_routes(): array {
@@ -96,8 +111,4 @@ function ascend_resource_gin_content_form_routes(): array {
     'entity.taxonomy_term.edit_form',
     'entity.taxonomy_term.edit_form.edit_info',
   ];
-}
-
-function ascend_resource_form_taxonomy_term_category_edit_info_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  \Drupal::service(ResourceHooks::class)->formTaxonomyTermCategoryEditInfoFormAlter($form, $form_state, $form_id);
 }
