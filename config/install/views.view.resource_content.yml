@@ -82,25 +82,27 @@ display:
             -
               action_id: 'entity:break_lock:resource'
               preconfiguration:
-                add_confirmation: false
-                confirm_help_text: ''
-                message_override: ''
+                add_confirmation: true
+                confirm_help_text: 'Break content lock on the selected resources?'
+                label_override: 'Break content lock on resource'
+                message_override: 'Breaking resource content lock'
             -
               action_id: views_bulk_operations_delete_entity
               preconfiguration:
-                add_confirmation: false
-                confirm_help_text: ''
-                message_override: ''
+                add_confirmation: true
+                confirm_help_text: 'Are you sure you want to permanently delete these resources?'
+                label_override: 'Delete resource'
+                message_override: 'Deleting resource'
             -
               action_id: 'entity:unpublish_action:resource'
               preconfiguration:
-                add_confirmation: false
+                add_confirmation: true
                 confirm_help_text: ''
                 message_override: ''
             -
               action_id: 'entity:publish_action:resource'
               preconfiguration:
-                add_confirmation: false
+                add_confirmation: true
                 confirm_help_text: ''
                 message_override: ''
         title:
