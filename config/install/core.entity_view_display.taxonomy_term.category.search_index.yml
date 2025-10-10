@@ -27,4 +27,5 @@ content:
     weight: 0
     region: content
 hidden:
+  extra_field_ascend_entity_type_field: true
   search_api_excerpt: true
