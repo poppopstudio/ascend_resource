@@ -1,7 +1,7 @@
 {
     "name": "poppopstudio/ascend_resource",
     "description": "Ascend project resource",
-    "type": "drupal-custom-module",
+    "type": "drupal-module",
     "license": "proprietary",
     "authors": [
         {
