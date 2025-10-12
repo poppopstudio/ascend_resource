@@ -202,3 +202,4 @@ content:
     third_party_settings: {  }
 hidden:
   ascend_res_evidence: true
+  path: true
