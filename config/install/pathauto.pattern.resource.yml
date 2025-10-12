@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ascend_resource
+id: resource
+label: Resource
+type: resource
+pattern: 'resource/[resource:resource_id]/[resource:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
