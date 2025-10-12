@@ -306,7 +306,7 @@ display:
       path: category
       menu:
         type: normal
-        title: Category
+        title: Categories
         description: ''
         weight: -49
         expanded: false
