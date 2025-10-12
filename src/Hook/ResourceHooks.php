@@ -133,11 +133,17 @@ class ResourceHooks {
       }
 
       $component = $form_display->getComponent('category');
-      
+
       if ($component) {
         $component['type'] = 'readonly_field_widget';
         $component['settings'] = [
-          'formatter_type' => 'cshs_full_hierarchy',
+          'formatter_type' => 'cshs_flexible_hierarchy',
+          'label' => 'inline',
+          'formatter_settings' => [
+            'cshs_flexible_hierarchy' => [
+              'format' => '[term:parent:name] » <span>[term:description]</span>',
+            ]
+          ]
         ];
         $form_display->setComponent('category', $component);
       }
