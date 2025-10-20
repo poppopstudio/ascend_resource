@@ -52,7 +52,7 @@ class ResourceForm extends ContentEntityForm {
     $form['meta']['author'] = [
       '#type' => 'item',
       '#title' => $this->t('Author'),
-      '#markup' => $resource->getOwner()->getAccountName(),
+      '#markup' => $resource->getOwner()?->getAccountName() ?? 'n/a!',
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
