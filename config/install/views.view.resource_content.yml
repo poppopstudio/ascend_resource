@@ -1,8 +1,12 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.resource.ascend_document
+    - field.storage.resource.ascend_res_link
   module:
     - ascend_resource
+    - link
     - user
     - views_bulk_operations
 id: resource_content
@@ -229,6 +233,136 @@ display:
           group_columns: {  }
           group_rows: true
           delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        ascend_res_link:
+          id: ascend_res_link
+          table: resource__ascend_res_link
+          field: ascend_res_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Link
+          exclude: false
+          alter:
+            alter_text: true
+            text: ✓
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ✗
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        ascend_document:
+          id: ascend_document
+          table: resource__ascend_document
+          field: ascend_document
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Document
+          exclude: false
+          alter:
+            alter_text: true
+            text: ✓
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ✗
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 1
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
@@ -652,11 +786,13 @@ display:
             views_bulk_operations_bulk_form: views_bulk_operations_bulk_form
             title: title
             category_target_id: category_target_id
+            ascend_res_link: ascend_res_link
+            ascend_document: ascend_document
             uid: uid
             status: status
             changed: changed
             operations: operations
-          default: title
+          default: changed
           info:
             views_bulk_operations_bulk_form:
               align: ''
@@ -672,6 +808,16 @@ display:
               responsive: ''
             category_target_id:
               align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            ascend_res_link:
+              align: views-align-center
+              separator: ''
+              empty_column: false
+              responsive: ''
+            ascend_document:
+              align: views-align-center
               separator: ''
               empty_column: false
               responsive: ''
@@ -691,7 +837,7 @@ display:
               responsive: ''
             changed:
               sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
@@ -729,7 +875,9 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.resource.ascend_document'
+        - 'config:field.storage.resource.ascend_res_link'
   page_1:
     id: page_1
     display_title: Page
@@ -746,4 +894,6 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.resource.ascend_document'
+        - 'config:field.storage.resource.ascend_res_link'
