@@ -49,6 +49,7 @@ config:
         - 'edit terms in pricing'
         - 'edit terms in stage'
         - 'use taxonomy_term.default form mode'
+        - 'masquerade as resource manager'
     core.entity_form_display.taxonomy_term.category.default:
       setComponent:
         name: ascend_info
