@@ -45,7 +45,6 @@ class ResourceForm extends ContentEntityForm {
     $form['meta']['changed'] = [
       '#type' => 'item',
       '#title' => $this->t('Last saved'),
-      // '#markup' => !$resource->isNew() ? $this->dateFormatter->format($resource->getChangedTime(), 'short') : $this->t('Not saved yet'),
       '#markup' => !$resource->isNew() ? \Drupal::service('date.formatter')->format($resource->getChangedTime(), 'short') : $this->t('Not saved yet'),
       '#wrapper_attributes' => ['class' => ['entity-meta__last-saved']],
     ];
