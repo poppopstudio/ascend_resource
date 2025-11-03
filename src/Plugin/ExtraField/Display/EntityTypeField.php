@@ -21,7 +21,6 @@ use Drupal\extra_field\Plugin\ExtraFieldDisplayFormattedBase;
  * )
  */
 
-
 class EntityTypeField extends ExtraFieldDisplayFormattedBase {
 
   use StringTranslationTrait;
