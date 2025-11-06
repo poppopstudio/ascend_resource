@@ -27,17 +27,6 @@ class ResourceHooks {
 
 
   /**
-   * Implements hook_form_FORM_ID_alter().
-   */
-  #[Hook('form_taxonomy_term_category_edit_info_form_alter')]
-  public function formTaxonomyTermCategoryEditInfoFormAlter(&$form, FormStateInterface $form_state, $form_id) {
-    // Hide taxonomy term relations element; don't change in this form mode.
-    $form['relations']['#access'] = FALSE;
-    return;
-  }
-
-
-  /**
    * Implements hook_entity_view_alter().
    */
   #[Hook('taxonomy_term_view_alter')]
@@ -88,25 +77,6 @@ class ResourceHooks {
 
 
   /**
-   * Implements hook_ENTITY_TYPE_presave().
-   */
-  #[Hook('taxonomy_term_presave')]
-  public function taxonomyTermPresave(EntityInterface $entity) {
-    /**
-     * Base field overrides required to set description text_format, BUT...
-     * They don't work without the UI, so we have to force at save (import) time.
-     * Might want to enforce for all vocabs not just category?
-     */
-    if ($entity->bundle() === 'category') {
-      $description = $entity->description;
-      if (!empty($description->value) && empty($description->format)) {
-        $description->format = 'plain_text';
-      }
-    }
-  }
-
-
-  /**
    * Implements hook_entity_form_display_alter
    */
   #[Hook('entity_form_display_alter')]
@@ -148,35 +118,6 @@ class ResourceHooks {
         $form_display->setComponent('category', $component);
       }
     }
-  }
-
-
-  /* These two functions need to be in a base module ideally! */
-
-  /**
-   * Implements hook_tokens_alter().
-   */
-  #[Hook('tokens_alter')]
-  public function tokensAlter(array &$replacements, array $context, BubbleableMetadata $bubbleable_metadata) {
-    // Convert term description token to string and strip html tags.
-    // Without this, term desc is wrapped in a <p> tag.
-    if ($context['type'] == 'term') {
-      if (isset($replacements['[term:description]'])) {
-        $desc = (string) $replacements['[term:description]'];
-        $desc = strip_tags($desc);
-        $replacements['[term:description]'] = $desc;
-      }
-    }
-  }
-
-
-  /**
-   * Implements hook_auto_username_alter().
-   */
-  #[Hook('auto_username_alter')]
-  public function autoUsernameAlter(array &$data): void {
-    // Force usernames to be all lower case.
-    // $data['username'] = strtolower($data['username']);
   }
 
 }
