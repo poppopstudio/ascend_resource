@@ -33,15 +33,6 @@ function ascend_resource_taxonomy_term_view_alter(array &$build, EntityInterface
   \Drupal::service(ResourceHooks::class)->taxonomyTermViewAlter($build, $entity, $display);
 }
 
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-#[LegacyHook]
-function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
-  \Drupal::service(ResourceHooks::class)->taxonomyTermPresave($entity);
-}
 
 /**
  * Legacy hook implementation.
@@ -51,26 +42,6 @@ function ascend_resource_taxonomy_term_presave(EntityInterface $entity) {
 #[LegacyHook]
 function ascend_resource_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
   \Drupal::service(ResourceHooks::class)->entityFormDisplayAlter($form_display, $context);
-}
-
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-#[LegacyHook]
-function ascend_resource_auto_username_alter(array &$data) {
-  \Drupal::service(ResourceHooks::class)->autoUsernameAlter($data);
-}
-
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-#[LegacyHook]
-function ascend_resource_form_taxonomy_term_category_edit_info_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  \Drupal::service(ResourceHooks::class)->formTaxonomyTermCategoryEditInfoFormAlter($form, $form_state, $form_id);
 }
 
 

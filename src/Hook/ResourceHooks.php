@@ -8,7 +8,6 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
-use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\taxonomy\Entity\Term;
 
 /**
