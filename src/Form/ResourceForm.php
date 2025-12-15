@@ -19,9 +19,6 @@ class ResourceForm extends ContentEntityForm {
     $resource = $this->entity;
 
     if (isset($form['revision'])) {
-      // Revision toggle -> on by default (see also ::getNewRevisionDefault).
-      $form['revision']['#default_value'] = TRUE;
-
       // Hide the revision checkbox for restricted roles.
       $restricted_roles = ['resource_creator',];
 
@@ -73,6 +70,13 @@ class ResourceForm extends ContentEntityForm {
     ];
 
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getNewRevisionDefault() {
+    return TRUE;
   }
 
   /**

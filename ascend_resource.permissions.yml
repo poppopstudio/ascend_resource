@@ -1,3 +1,10 @@
 administer resource entities:
   title: Administer Resource entities
   description: Update settings for the Resource entity type.
+
+view resource revisions:
+  title: 'View resource revisions'
+revert resource revisions:
+  title: 'Revert resource revisions'
+delete resource revisions:
+  title: 'Delete resource revisions'
