@@ -210,4 +210,10 @@ class Resource extends EditorialContentEntityBase implements ResourceInterface {
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function getNewRevisionDefault() {
+    return TRUE;
+  }
 }

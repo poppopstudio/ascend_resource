@@ -18,6 +18,23 @@ class ResourceForm extends ContentEntityForm {
     /** @var \Drupal\ascend_resource\Entity\Resource $resourcep */
     $resource = $this->entity;
 
+    if (isset($form['revision'])) {
+      // Revision toggle -> on by default (see also ::getNewRevisionDefault).
+      $form['revision']['#default_value'] = TRUE;
+
+      // Hide the revision checkbox for restricted roles.
+      $restricted_roles = ['resource_creator',];
+
+      $current_user = \Drupal::currentUser();
+
+      foreach ($restricted_roles as $role) {
+        if ($current_user->hasRole($role)) {
+          $form['revision']['#access'] = FALSE;
+          break;
+        }
+      }
+    }
+
     if ($this->operation == 'edit') {
       $form['#title'] = $this->t('<em>Edit @type</em> @title', [
         '@type' => 'resource',
