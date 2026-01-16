@@ -15,6 +15,7 @@ dependencies:
   - field_group:field_group
   - field_group_table:field_group_table
   - filefield_paths:filefield_paths
+  - flag:flag
   - form_mode_manager:form_mode_manager
   - inline_entity_form:inline_entity_form
   - media:media
@@ -32,10 +33,12 @@ config_devel:
   - block.block.ascend_resource_search
   - core.base_field_override.resource.resource.category
   - core.base_field_override.taxonomy_term.category.description
+  - core.entity_form_display.flagging.report.default
   - core.entity_form_display.media.document.default
   - core.entity_form_display.resource.resource.default
   - core.entity_form_display.taxonomy_term.category.edit_info
   - core.entity_form_mode.taxonomy_term.edit_info
+  - core.entity_view_display.flagging.report.default
   - core.entity_view_display.media.document.default
   - core.entity_view_display.node.page.search_index
   - core.entity_view_display.node.page.search_result
@@ -51,6 +54,7 @@ config_devel:
   - core.entity_view_mode.resource.search_result
   - core.entity_view_mode.taxonomy_term.search_index
   - core.entity_view_mode.taxonomy_term.search_result
+  - field.field.flagging.report.ascend_report_details
   - field.field.media.document.ascend_media_desc
   - field.field.media.document.field_media_document
   - field.field.resource.resource.ascend_document
@@ -61,6 +65,8 @@ config_devel:
   - field.field.resource.resource.ascend_res_stage
   - field.field.resource.resource.ascend_res_usage
   - field.field.taxonomy_term.category.ascend_info
+  - flag.flag.report
+  - field.storage.flagging.ascend_report_details
   - field.storage.media.ascend_media_desc
   - field.storage.media.field_media_document
   - field.storage.resource.ascend_document
@@ -77,6 +83,9 @@ config_devel:
   - search_api.index.resource
   - search_api.server.resource
   - search_api.settings
+  - system.action.flag_action.report_flag
+  - system.action.flag_action.report_unflag
+  - system.action.flag_delete_flagging
   - system.action.user_add_role_action.resource_manager
   - system.action.user_remove_role_action.resource_manager
   - taxonomy.vocabulary.pricing
@@ -86,5 +95,6 @@ config_devel:
   - views.view.category_child_terms
   - views.view.category_parent_terms
   - views.view.category_resources
+  - views.view.reported_resources
   - views.view.resource_content
   - views.view.resource_needed
