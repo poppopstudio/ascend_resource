@@ -29,6 +29,7 @@ permissions:
   - 'edit any document media'
   - 'edit own document media'
   - 'revert any document media revisions'
+  - 'unflag report'
   - 'update any resource'
   - 'update own resource'
   - 'view any document media revisions'

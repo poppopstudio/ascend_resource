@@ -4,6 +4,7 @@ type: 'Content type'
 recipes:
   # Can't depend on other recipes outside of this dir or core!
 install:
+  - flag
   - media
   - media_entity_download
   - search_api
@@ -27,17 +28,19 @@ config:
           values: {  }
     user.role.anonymous:
       grantPermissions:
+        - 'flag report'
         - 'view resource'
         - 'download media'
     user.role.authenticated:
       grantPermissions:
+        - 'flag report'
         - 'view resource'
         - 'download media'
     user.role.content_editor:
       grantPermissions:
+        - 'unflag report'
         - 'edit terms in category'
         - 'use taxonomy_term.edit_info form mode'
-        # Access the Files overview page?
     user.role.user_manager:
       grantPermissions:
         - 'assign resource_manager role'

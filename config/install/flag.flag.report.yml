@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ascend_resource
+id: report
+label: Report
+bundles:
+  - resource
+entity_type: resource
+global: true
+flag_short: 'Report a problem with this resource'
+flag_long: ''
+flag_message: 'Resource has been reported'
+unflag_short: 'Update report'
+unflag_long: ''
+unflag_message: 'Report has been removed'
+unflag_denied_text: 'This resource has been reported'
+weight: 0
+flag_type: 'entity:resource'
+link_type: field_entry
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig:
+  flag_confirmation: 'Enter report details'
+  edit_flagging: 'Edit report details'
+  unflag_confirmation: 'Remove this report?'
+  flag_create_button: 'Submit report'
+  flag_delete_button: 'Delete report'
+  flag_update_button: 'Update report'
+  form_behavior: default

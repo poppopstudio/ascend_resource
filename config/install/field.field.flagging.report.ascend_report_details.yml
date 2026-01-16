@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.flagging.ascend_report_details
+    - flag.flag.report
+id: flagging.report.ascend_report_details
+field_name: ascend_report_details
+entity_type: flagging
+bundle: report
+label: Details
+description: 'Describe the problem with this resource.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

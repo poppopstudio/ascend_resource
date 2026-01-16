@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.report
+  module:
+    - flag
+id: flag_action.report_unflag
+label: 'Remove report from this resource'
+type: resource
+plugin: 'flag_action:report_unflag'
+configuration:
+  flag_id: report
+  flag_action: unflag

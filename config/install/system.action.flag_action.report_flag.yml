@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.report
+  module:
+    - flag
+id: flag_action.report_flag
+label: 'Report a problem with this resource'
+type: resource
+plugin: 'flag_action:report_flag'
+configuration:
+  flag_id: report
+  flag_action: flag
