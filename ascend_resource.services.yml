@@ -2,3 +2,9 @@ services:
   Drupal\ascend_resource\Hook\ResourceHooks:
     class: Drupal\ascend_resource\Hook\ResourceHooks
     autowire: true
+
+  Drupal\ascend_resource\EventSubscriber\FlagCacheInvalidationSubscriber:
+    class: Drupal\ascend_resource\EventSubscriber\FlagCacheInvalidationSubscriber
+    autowire: true
+    tags:
+      - { name: event_subscriber }
