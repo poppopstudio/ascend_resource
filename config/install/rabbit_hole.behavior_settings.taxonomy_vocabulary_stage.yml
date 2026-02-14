@@ -1,0 +1,14 @@
+uuid: 0abd39ed-206d-410c-a8dc-c3bd0e219101
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stage
+id: taxonomy_vocabulary_stage
+entity_type_id: taxonomy_vocabulary
+entity_id: stage
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

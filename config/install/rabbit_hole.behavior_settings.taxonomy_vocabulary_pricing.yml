@@ -1,0 +1,14 @@
+uuid: 87f827f6-e550-4d6e-a56c-a4d6ee5cafac
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pricing
+id: taxonomy_vocabulary_pricing
+entity_type_id: taxonomy_vocabulary
+entity_id: pricing
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
