@@ -5,6 +5,7 @@ recipes:
   # Can't depend on other recipes outside of this dir or core!
 install:
   - flag
+  - draggableviews
   - media
   - media_entity_download
   - search_api

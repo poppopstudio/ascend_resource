@@ -1,3 +1,4 @@
+uuid: d849ad14-5776-4be1-a023-063da48cebcd
 langcode: en-gb
 status: true
 dependencies:
@@ -6,9 +7,13 @@ dependencies:
   module:
     - ascend_resource
     - contextual
+    - draggableviews
+    - flag
     - media
     - node
     - system
+_core:
+  default_config_hash: hU_LbKfZHl4cIJffrtMnppJZJKERTIs1pULqQT3O9kk
 id: resource_manager
 label: 'Resource manager'
 weight: 9
@@ -17,6 +22,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access draggableviews'
   - 'access media overview'
   - 'access resource overview'
   - 'create document media'
