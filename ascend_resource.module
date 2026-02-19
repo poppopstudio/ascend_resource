@@ -6,12 +6,31 @@
  */
 
 use Drupal\ascend_resource\Hook\ResourceHooks;
+use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\LegacyHook;
 use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Attaches draggableviews override styles on frontend when the view uses
+ * draggableviews.
+ */
+function ascend_resource_views_pre_render(ViewExecutable $view): void {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+  foreach ($view->field ?? [] as $field) {
+    if ($field->getPluginId() === 'draggableviews') {
+      $view->element['#attached']['library'][] = 'ascend_resource/styles';
+      break;
+    }
+  }
+}
 
 /**
  * Legacy hook implementation.
