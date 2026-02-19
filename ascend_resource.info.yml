@@ -3,6 +3,8 @@ type: module
 package: Ascend
 description: 'Ascend resource'
 core_version_requirement: ^10 || ^11
+libraries:
+  - ascend_resource/styles
 dependencies:
   - auto_username:auto_username
   - configurable_views_filter_block:configurable_views_filter_block

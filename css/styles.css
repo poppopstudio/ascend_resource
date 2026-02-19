@@ -1,0 +1,11 @@
+.tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+.views-field.views-field-draggableviews {
+  display: none;
+}
+
+.select-all.views-field.views-field-draggableviews {
+  display: none;
+}
