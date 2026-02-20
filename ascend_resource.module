@@ -25,7 +25,7 @@ function ascend_resource_views_pre_render(ViewExecutable $view): void {
     return;
   }
   foreach ($view->field ?? [] as $field) {
-    if ($field->getPluginId() === 'draggableviews') {
+    if ($field->getPluginId() === 'draggable_views_field') {
       $view->element['#attached']['library'][] = 'ascend_resource/styles';
       break;
     }
