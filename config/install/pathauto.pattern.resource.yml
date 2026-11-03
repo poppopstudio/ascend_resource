@@ -5,7 +5,7 @@ dependencies:
     - ascend_resource
 id: resource
 label: Resource
-type: resource
+type: 'canonical_entities:resource'
 pattern: 'resource/[resource:resource_id]/[resource:title]'
 selection_criteria: {  }
 selection_logic: and
