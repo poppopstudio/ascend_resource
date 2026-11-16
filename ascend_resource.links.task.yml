@@ -3,6 +3,14 @@ entity.resource.collection:
   route_name: entity.resource.collection
   base_route: system.admin_content
   weight: 15
+# Default sub-tab of Content > Resources. Other resource admin pages (the
+# "Reported resources" view, add-on modules) are re-parented next to it, see
+# ascend_resource_local_tasks_alter().
+ascend_resource.collection_list:
+  title: 'Resources'
+  route_name: entity.resource.collection
+  parent_id: entity.resource.collection
+  weight: -10
 entity.resource.canonical:
   title: 'View'
   route_name: entity.resource.canonical

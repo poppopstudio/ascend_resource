@@ -102,3 +102,22 @@ function ascend_resource_gin_content_form_routes(): array {
     'entity.taxonomy_term.edit_form.edit_info',
   ];
 }
+
+/**
+ * Implements hook_local_tasks_alter().
+ *
+ * The "Reported resources" view tab (menu type "Tab" in the view) becomes a
+ * sub-tab of Content > Resources instead of a tab in the main Content row.
+ * Its title and weight stay editable in the Views UI; when the view or its
+ * tab does not exist, nothing is touched.
+ */
+function ascend_resource_local_tasks_alter(array &$local_tasks): void {
+  if (!isset($local_tasks['entity.resource.collection'])) {
+    return;
+  }
+  foreach ($local_tasks as $id => &$task) {
+    if (str_starts_with($id, 'views_view:view.reported_resources.')) {
+      $task['parent_id'] = 'entity.resource.collection';
+    }
+  }
+}
